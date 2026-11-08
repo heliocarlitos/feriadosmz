@@ -1,0 +1,81 @@
+# API de Feriados de Moçambique
+
+> API aberta e gratuita com os feriados nacionais, provinciais, municipais, religiosos e as tolerâncias de ponto de Moçambique. Devolve datas calculadas por ano, contexto histórico, locais, intervenientes, personalidades e imagens. Sem registo e sem chave de acesso.
+
+A API segue o modelo REST, devolve JSON com a chave `success` em todas as respostas e aceita o parâmetro `?ano=` (2000–2100) para calcular as datas de qualquer ano. A documentação interactiva está disponível em `/doc`.
+
+## Documentação
+
+- [Documentação interactiva](https://feriadosmz.vercel.app/doc): Interface completa com exemplos, respostas reais e referência de todas as rotas.
+- [Página inicial](https://feriadosmz.vercel.app/): Visão geral do projecto, estatísticas e experimentação directa.
+
+## API
+
+- [Lista de feriados](https://feriadosmz.vercel.app/api/feriados): Todos os feriados com datas calculadas para o ano actual (ou `?ano=`).
+- [Feriado por ID](https://feriadosmz.vercel.app/api/feriados/5): Um feriado específico. Aceita `?ano=`.
+- [Detalhes do feriado](https://feriadosmz.vercel.app/api/feriados/5/detalhes): Todos os campos individualizados.
+- [Imagens do feriado](https://feriadosmz.vercel.app/api/feriados/5/imagens): Array de imagens, com fallback para `image_default.webp`.
+- [Intervenientes e personalidades](https://feriadosmz.vercel.app/api/feriados/5/intervenientes): Lista de intervenientes e personalidades.
+- [Local do feriado](https://feriadosmz.vercel.app/api/feriados/5/local): Local, província, distrito e município.
+- [Campo individual](https://feriadosmz.vercel.app/api/feriados/5/nome): Devolve um único campo de um feriado.
+- [Lista de campos](https://feriadosmz.vercel.app/api/feriados/campos): Metadados de todos os campos disponíveis.
+- [Por tipo](https://feriadosmz.vercel.app/api/feriados/tipo/nacional): Filtra por `nacional`, `provincial`, `municipal`, `religioso` ou `tolerancia-ponto`.
+- [Por mês](https://feriadosmz.vercel.app/api/feriados/mes/6): Feriados de um mês (1–12).
+- [Por ano](https://feriadosmz.vercel.app/api/feriados/ano/2026): Feriados calculados para um ano específico (2000–2100).
+- [Por província](https://feriadosmz.vercel.app/api/feriados/provincia/Maputo): Feriados de uma província.
+- [Hoje](https://feriadosmz.vercel.app/api/feriados/hoje): Indica se hoje é feriado. Se não for, devolve os próximos três.
+- [Próximos feriados](https://feriadosmz.vercel.app/api/feriados/proximos): Próximos feriados. Aceita `?limite=` (1–50, padrão 5).
+- [Pesquisa](https://feriadosmz.vercel.app/api/feriados/buscar?q=paz): Pesquisa por nome ou descrição com `?q=`.
+- [Estatísticas](https://feriadosmz.vercel.app/api/feriados/estatisticas): Totais por tipo e por mês.
+- [Ano actual](https://feriadosmz.vercel.app/api/feriados/ano/actual): Devolve o ano corrente no fuso de Maputo.
+
+## Campos disponíveis
+
+- `id` (número): identificador único.
+- `nome` (texto): nome do feriado.
+- `tipo` (texto): `nacional`, `provincial`, `municipal`, `religioso` ou `tolerancia_ponto`.
+- `data` (texto ou nulo): `AAAA-MM-DD`, nula quando a data ainda não foi confirmada.
+- `ano` (número): ano a que a data se refere.
+- `mes` (número ou nulo): mês, de 1 a 12.
+- `mesNome` (texto ou nulo): nome do mês por extenso.
+- `dia` (número ou nulo): dia do mês.
+- `diaSemana` (texto ou nulo): dia da semana em que o feriado cai.
+- `movel` (booleano): indica se a data muda de ano para ano.
+- `regra` (texto ou nulo): regra de cálculo dos feriados móveis.
+- `descricaoCurta` (texto ou nulo): resumo de uma frase.
+- `descricao` (texto ou nulo): descrição completa e contexto histórico.
+- `local` (texto ou nulo): local associado.
+- `provincia` (texto ou nulo): província.
+- `distrito` (texto ou nulo): distrito.
+- `municipio` (texto ou nulo): município.
+- `intervenientes` (lista de textos): pessoas e organizações envolvidas.
+- `personalidades` (lista de objectos): nome, papel, nascimento e morte.
+- `anoEvento` (número ou nulo): ano do acontecimento recordado.
+- `anoInstituicao` (número ou nulo): ano em que o feriado foi instituído.
+- `instrumentoLegal` (texto ou nulo): lei ou diploma que o institui.
+- `observancia` (texto ou nulo): natureza da observância.
+- `imagens` (lista de objectos): `url`, `alt`, `credito` e `tipo`.
+
+## Parâmetros
+
+- `campos`: nomes separados por vírgula. Escolhe os campos devolvidos.
+- `ano`: 2000 a 2100. Ano das datas. Por omissão, o ano actual em Maputo.
+- `limite`: 1 a 50. Quantidade de resultados em `/proximos`. Por omissão, 5.
+- `q`: termo de pesquisa em `/buscar`.
+
+## Formato das respostas
+
+Todas as respostas incluem a chave `success`. Listas vêm em `data`, com o número de itens em `total`. Erros devolvem `success: false` e uma `message`. Os estados HTTP são 400 para pedidos inválidos e 404 quando o feriado não existe.
+
+## Notas sobre fidelidade dos dados
+
+- A API não aplica automaticamente a transição para a Segunda-feira quando um feriado calha a Domingo.
+- `Eid al-Fitr` e `Eid al-Adha` são tolerâncias de ponto concedidas por despacho ministerial apenas aos trabalhadores de confissão muçulmana.
+- O `Dia da Cidade de Maputo` (10 de Novembro) é feriado apenas no município de Maputo.
+- Feriados móveis sem data confirmada devolvem `null` em `data`, `mes`, `mesNome`, `dia` e `diaSemana`.
+
+## Optional
+
+- [Esquema JSON dos feriados](https://github.com/heliocarlitos/feriadosmz/blob/main/src/dados/feriados.schema.json): Especificação formal da estrutura de `feriados.json`.
+- [Repositório GitHub](https://github.com/heliocarlitos/feriadosmz): Código-fonte, dados em `src/dados/feriados.json` e script de validação `src/dados/validar.mjs`.
+- [Mapa do site](https://feriadosmz.vercel.app/sitemap.xml): Índice de todas as páginas públicas.
