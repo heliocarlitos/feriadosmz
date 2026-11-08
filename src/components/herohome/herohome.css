@@ -170,6 +170,7 @@
   opacity: 0;
   animation: herohome-rodar 12s ease-in-out infinite both;
   animation-delay: calc(var(--i, 0) * 3s);
+  width: fit-content !important;
 }
 
 .herohome__accoes {

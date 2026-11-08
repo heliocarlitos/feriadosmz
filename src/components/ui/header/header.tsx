@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type PointerEvent } from "react"
+import Pesquisa from "@componentes/pesquisa/pesquisa"
 import { VscClose, VscLock } from "react-icons/vsc"
 import { juntarClasses } from "@/biblioteca/cliente"
 
@@ -205,6 +206,7 @@ export default function Header() {
         </nav>
 
         <div className="header__accoes">
+          <Pesquisa aoAbrir={fechar} />
           <BotaoTema />
 
           <button ref={gatilhoRef} type="button" className="header__gatilho" aria-expanded={painelAberto} aria-controls={idPainel} aria-label={painelAberto ? "Fechar menu" : "Abrir menu"} onClick={alternarPainel}>

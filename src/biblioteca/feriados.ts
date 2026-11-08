@@ -2,6 +2,7 @@ import conjunto from "@/dados/feriados.json"
 import { NOMES_MESES, calcularDataMovel, formatarDataIso, hojeEmMaputo, obterDiaSemana } from "./datas"
 import { TIPOS_FERIADO } from "./tipos"
 import type { ConjuntoFeriados, DataSimples, Feriado, FeriadoCompleto, ImagemFeriado, TipoFeriado } from "./tipos"
+import { extrairTermos, pesquisarFeriados } from "./pesquisa"
 
 const feriadosBase = (conjunto as unknown as ConjuntoFeriados).feriados
 
@@ -87,8 +88,7 @@ export function filtrarPorProvincia(provincia: string, ano: number): FeriadoComp
 }
 
 export function pesquisar(termo: string, ano: number): FeriadoCompleto[] {
-  const procurado = normalizar(termo)
-  return listarFeriados(ano).filter(feriado => normalizar(feriado.nome).includes(procurado) || normalizar(feriado.descricao ?? "").includes(procurado))
+  return pesquisarFeriados(listarFeriados(ano), extrairTermos(termo)).map(resultado => resultado.feriado)
 }
 
 export function feriadosDeHoje(hoje: DataSimples = hojeEmMaputo()): FeriadoCompleto[] {
