@@ -30,6 +30,8 @@ _Aberta, gratuita e ~~com chave~~ sem chave de acesso._
 
 ## Acções rápidas
 
+Segura `Ctrl` + `click` para abrir na nova janela.
+
 <div align='center'>
 
 <a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Enviar%20fotos%20de%20feriado&body=**Feriado**%3A%20%0A**Ficheiro%20ou%20link%20das%20imagens**%3A%20%0A**Cr%C3%A9ditos%20da%20foto**%3A%20%0A%0A>%20Envia%20anexos%20directamente%20neste%20issue%20ou%20coloca%20links%20para%20um%20servi%C3%A7o%20externo.' target='_blank'><img src='https://img.shields.io/badge/Enviar%20fotos-0E5E4B?style=for-the-badge' alt='Enviar fotos' /></a>
