@@ -28,7 +28,16 @@ _Aberta, gratuita e ~~com chave~~ sem chave de acesso._
 
 </div>
 
-##
+## Acções rápidas
+
+<div align='center'>
+
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Enviar%20fotos%20de%20feriado&body=**Feriado**%3A%20%0A**Ficheiro%20ou%20link%20das%20imagens**%3A%20%0A**Cr%C3%A9ditos%20da%20foto**%3A%20%0A%0A>%20Envia%20anexos%20directamente%20neste%20issue%20ou%20coloca%20links%20para%20um%20servi%C3%A7o%20externo.' target='_blank'><img src='https://img.shields.io/badge/Enviar%20fotos-0E5E4B?style=for-the-badge' alt='Enviar fotos' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Relatar%20um%20bug&body=**O%20que%20aconteceu**%3A%20%0A**O%20que%20esperavas**%3A%20%0A**Passos%20para%20reproduzir**%3A%20%0A1.%20%0A2.%20%0A3.%20%0A**Ambiente**%3A%20%0A-%20Rota%3A%20%0A-%20Par%C3%A2metros%3A%20%0A-%20Navegador%2Flinguagem%3A%20%0A%0A>%20Cola%20a%20resposta%20da%20API%20ou%20um%20print.%20Se%20poss%C3%ADvel%2C%20reproduz%20com%20%60curl%60.' target='_blank'><img src='https://img.shields.io/badge/Relatar%20um%20bug-b00020?style=for-the-badge' alt='Relatar um bug' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Dar%20uma%20sugest%C3%A3o&body=**Ideia**%3A%20%0A**Porque%20seria%20%C3%BAtil**%3A%20%0A**Alternativas%20que%20consideraste**%3A%20%0A%0A>%20Sugest%C3%B5es%20de%20novos%20campos%2C%20rotas%20ou%20melhorias%20na%20documenta%C3%A7%C3%A3o%20s%C3%A3o%20bem-vindas.' target='_blank'><img src='https://img.shields.io/badge/Dar%20uma%20sugest%C3%A3o-3178C6?style=for-the-badge' alt='Dar uma sugestão' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Corrigir%20dados%20de%20feriado&body=**Feriado%20afectado**%3A%20%0A**Campo%20a%20corrigir**%3A%20%0A**Valor%20actual**%3A%20%0A**Valor%20correcto**%3A%20%0A**Fonte%20oficial**%3A%20%0A%0A>%20Anexa%20a%20p%C3%A1gina%20do%20Boletim%20da%20Rep%C3%BAblica%2C%20do%20Jornal%20Not%C3%ADcias%20ou%20de%20outra%20fonte%20oficial.' target='_blank'><img src='https://img.shields.io/badge/Corrigir%20dados-d97706?style=for-the-badge' alt='Corrigir dados' /></a>
+
+</div>
 
 # Introdução
 
@@ -2781,9 +2790,42 @@ Antes de abrir o pull request:
 
 Distribuído sob a licença **MIT**.
 
-**Autor**
+##
 
-[Hélio Carlitos](https://github.com/heliocarlitos/)
+<div align='center'>
+
+### <a href='#topo'>Ir ao topo</a>
+
+</div>
+
+##
+
+## 16. Como contribuir
+
+<div align='center'>
+
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Enviar%20fotos%20de%20feriado&body=**Feriado**%3A%20%0A**Ficheiro%20ou%20link%20das%20imagens**%3A%20%0A**Cr%C3%A9ditos%20da%20foto**%3A%20%0A%0A>%20Envia%20anexos%20directamente%20neste%20issue%20ou%20coloca%20links%20para%20um%20servi%C3%A7o%20externo.' target='_blank'><img src='https://img.shields.io/badge/Enviar%20fotos-0E5E4B?style=for-the-badge' alt='Enviar fotos' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Relatar%20um%20bug&body=**O%20que%20aconteceu**%3A%20%0A**O%20que%20esperavas**%3A%20%0A**Passos%20para%20reproduzir**%3A%20%0A1.%20%0A2.%20%0A3.%20%0A**Ambiente**%3A%20%0A-%20Rota%3A%20%0A-%20Par%C3%A2metros%3A%20%0A-%20Navegador%2Flinguagem%3A%20%0A%0A>%20Cola%20a%20resposta%20da%20API%20ou%20um%20print.%20Se%20poss%C3%ADvel%2C%20reproduz%20com%20%60curl%60.' target='_blank'><img src='https://img.shields.io/badge/Relatar%20um%20bug-b00020?style=for-the-badge' alt='Relatar um bug' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Dar%20uma%20sugest%C3%A3o&body=**Ideia**%3A%20%0A**Porque%20seria%20%C3%BAtil**%3A%20%0A**Alternativas%20que%20consideraste**%3A%20%0A%0A>%20Sugest%C3%B5es%20de%20novos%20campos%2C%20rotas%20ou%20melhorias%20na%20documenta%C3%A7%C3%A3o%20s%C3%A3o%20bem-vindas.' target='_blank'><img src='https://img.shields.io/badge/Dar%20uma%20sugest%C3%A3o-3178C6?style=for-the-badge' alt='Dar uma sugestão' /></a>
+<a href='https://github.com/heliocarlitos/feriadosmz/issues/new?title=Corrigir%20dados%20de%20feriado&body=**Feriado%20afectado**%3A%20%0A**Campo%20a%20corrigir**%3A%20%0A**Valor%20actual**%3A%20%0A**Valor%20correcto**%3A%20%0A**Fonte%20oficial**%3A%20%0A%0A>%20Anexa%20a%20p%C3%A1gina%20do%20Boletim%20da%20Rep%C3%BAblica%2C%20do%20Jornal%20Not%C3%ADcias%20ou%20de%20outra%20fonte%20oficial.' target='_blank'><img src='https://img.shields.io/badge/Corrigir%20dados-d97706?style=for-the-badge' alt='Corrigir dados' /></a>
+
+</div>
+
+##
+
+<div align='center'>
+
+### <a href='#topo'>Ir ao topo</a>
+
+</div>
+
+##
+
+## 17. Colaboradores
+
+|                                                                                      Colaborador                                                                                       |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <a href="https://github.com/heliocarlitos" target="_blank"><img src="https://github.com/heliocarlitos.png" width="48" alt="Hélio Carlitos" /><br/><sub><b>Hélio Carlitos</b></sub></a> |
 
 <br/>
 
@@ -2792,7 +2834,7 @@ Distribuído sob a licença **MIT**.
 <sub>Feito em Moçambique · dados validados com `validar.mjs`</sub>
 
 <p align='center'>
-<a href='https://feriadosmz.vercel.app/doc' target='_blank'>Documentação online</a> · <a href='https://github.com/heliocarlitos/api-feriados-mocambique' target='_blank'>Repositório</a>
+<a href='https://feriadosmz.vercel.app/doc' target='_blank'>Documentação online</a> · <a href='https://github.com/heliocarlitos/feriadosmz' target='_blank'>Repositório</a> · <a href='https://github.com/heliocarlitos/feriadosmz/issues' target='_blank'>Issues</a>
 </p>
 
 ### <a href='#topo'>Ir ao topo</a>
