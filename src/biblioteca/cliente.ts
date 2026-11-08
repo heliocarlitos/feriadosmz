@@ -1,23 +1,12 @@
 import type { FeriadoCompleto } from "./tipos"
 
-/**
- * Utilitários usados pelos componentes do site (lado do navegador).
- * Não importa os dados em JSON, para os não incluir no código enviado ao cliente.
- */
-
 export const BASE_API = "/api"
 export const URL_DOCUMENTACAO = "/documentacao"
-export const URL_REPOSITORIO = "https://github.com/heliocarlitos/api-feriados-mocambique"
+export const URL_REPOSITORIO = "https://github.com/heliocarlitos/feriadosmz"
 
-export const MESES = [
-  "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-  "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-]
+export const MESES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
-export const DIAS_SEMANA = [
-  "Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira",
-  "Quinta-feira", "Sexta-feira", "Sábado"
-]
+export const DIAS_SEMANA = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
 
 export type FeriadoResumo = Pick<FeriadoCompleto, "id" | "nome" | "mes" | "dia" | "tipo">
 
