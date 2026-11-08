@@ -1,0 +1,26 @@
+{
+  "name": "api-feriados-mocambique",
+  "version": "2.0.0",
+  "private": true,
+  "description": "API e site dos feriados de Moçambique",
+  "author": "Hélio Carlitos",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dados:validar": "node src/dados/validar.mjs"
+  },
+  "dependencies": {
+    "next": "^16.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,533 @@
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  padding-block-start: var(--espaco-3);
+  pointer-events: none;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header > * {
+  pointer-events: auto;
+}
+
+.header--oculto:not([data-painel]) {
+  transform: translateY(calc(-100% - var(--espaco-3)));
+}
+
+.header__ilha {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--espaco-4);
+  inline-size: min(100% - 2 * var(--espaco-4), 64rem);
+  min-block-size: 3.5rem;
+  margin-inline: auto;
+  padding: 0.375rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--cor-fundo) 92%, transparent);
+  backdrop-filter: saturate(160%) blur(20px);
+  -webkit-backdrop-filter: saturate(160%) blur(20px);
+  transition:
+    border-color var(--duracao) ease,
+    background-color var(--duracao) ease;
+}
+
+.header--rolado .header__ilha {
+  background: color-mix(in oklch, var(--cor-fundo) 96%, transparent);
+  box-shadow: 0 16px 36px -18px color-mix(in oklch, var(--cor-texto) 40%, transparent);
+}
+
+.header__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  justify-self: start;
+  padding-inline-end: var(--espaco-3);
+  border-radius: 999px;
+  color: var(--cor-texto);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.header__marca:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.header__simbolo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.header__logo {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+.header__marca:hover .header__simbolo {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.header__marcaTexto {
+  white-space: nowrap;
+}
+
+.header__marcaDestaque {
+  color: var(--cor-destaque);
+}
+
+.header__nav {
+  justify-self: center;
+  min-inline-size: 0;
+}
+
+.header__lista {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.header__lista::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: -1;
+  inline-size: var(--indicador-l, 0px);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--cor-destaque) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--cor-destaque) 30%, transparent);
+  opacity: 0;
+  transform: translateX(var(--indicador-x, 0px));
+  transition:
+    transform 420ms cubic-bezier(0.34, 1.35, 0.64, 1),
+    inline-size 420ms cubic-bezier(0.34, 1.35, 0.64, 1),
+    opacity 200ms ease;
+}
+
+.header__lista[data-indicador]::before {
+  opacity: 1;
+}
+
+.header__ligacao {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duracao) ease;
+}
+
+.header__ligacao:hover,
+.header__ligacao--activa {
+  color: var(--cor-texto);
+}
+
+.header__ligacao--destaque {
+  color: var(--cor-destaque);
+}
+
+.header__ligacao--destaque:hover,
+.header__ligacao--destaque.header__ligacao--activa {
+  color: var(--cor-destaque-forte);
+}
+
+.header__ligacao:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.header__accoes {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  justify-self: end;
+}
+
+.header__gatilho {
+  position: relative;
+  display: none;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 50%;
+  color: var(--cor-texto);
+  transition:
+    background-color var(--duracao) ease,
+    border-color var(--duracao) ease;
+}
+
+.header__gatilho:hover {
+  border-color: var(--cor-texto-suave);
+  background: var(--cor-superficie);
+}
+
+.header__gatilho:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.header__linha {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  inline-size: 1.05rem;
+  block-size: 2px;
+  margin-inline-start: -0.525rem;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header__linha:first-child {
+  transform: translateY(-4px);
+}
+
+.header__linha:last-child {
+  transform: translateY(3px);
+}
+
+.header__gatilho[aria-expanded="true"] .header__linha:first-child {
+  transform: translateY(-1px) rotate(45deg);
+}
+
+.header__gatilho[aria-expanded="true"] .header__linha:last-child {
+  transform: translateY(-1px) rotate(-45deg);
+}
+
+.header__painel {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  max-inline-size: 100vw;
+  padding-block-start: 5.75rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  isolation: isolate;
+  background: radial-gradient(circle at 100% 0%, color-mix(in oklch, var(--cor-destaque) 16%, transparent) 0%, transparent 55%), var(--cor-fundo);
+  clip-path: circle(0px at var(--origem-x, 100%) var(--origem-y, 0px));
+  visibility: hidden;
+  transition:
+    clip-path 640ms cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s linear 640ms;
+}
+
+.header__painel[data-aberto] {
+  clip-path: circle(150vmax at var(--origem-x, 100%) var(--origem-y, 0px));
+  visibility: visible;
+  transition:
+    clip-path 760ms cubic-bezier(0.76, 0, 0.24, 1),
+    visibility 0s;
+}
+
+.header__painel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(color-mix(in oklch, var(--cor-borda) 60%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklch, var(--cor-borda) 60%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at 70% 20%, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 70% 20%, black, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.header__painel::after {
+  content: "MZ";
+  position: absolute;
+  inset-inline-end: -0.04em;
+  inset-block-end: -0.16em;
+  z-index: -1;
+  color: transparent;
+  font-size: 42vmax;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  -webkit-text-stroke: 1px color-mix(in oklch, var(--cor-destaque) 28%, transparent);
+  pointer-events: none;
+}
+
+.header__painelTopo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4) var(--espaco-5);
+}
+
+.header__painelRisco {
+  inline-size: 2.25rem;
+  block-size: 2px;
+  background: var(--cor-destaque);
+}
+
+.header__painelEtiqueta {
+  color: var(--cor-texto-suave);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.header__painelAno {
+  margin-inline-start: auto;
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.header__painelLista {
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--espaco-4);
+}
+
+.header__painelItem {
+  border-block-end: 1px solid color-mix(in oklch, var(--cor-borda) 60%, transparent);
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 240ms ease,
+    transform 240ms ease;
+}
+
+.header__painelItem:last-child {
+  border-block-end: 0;
+}
+
+.header__painel[data-aberto] .header__painelItem {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 500ms ease calc(280ms + var(--i, 0) * 80ms),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) calc(280ms + var(--i, 0) * 80ms);
+}
+
+.header__painelLigacao {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr auto;
+  align-items: baseline;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4) var(--espaco-2);
+  color: var(--cor-texto);
+  font-size: clamp(1.75rem, 1.1rem + 3.4vw, 3rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-decoration: none;
+  transition: color var(--duracao) ease;
+}
+
+.header__painelNumero {
+  color: var(--cor-destaque);
+  font-family: var(--fonte-codigo);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.header__painelRotulo {
+  position: relative;
+  justify-self: start;
+}
+
+.header__painelRotulo::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -0.12em;
+  block-size: 3px;
+  background: var(--cor-destaque);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header__painelSeta {
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 1.25rem;
+  transition:
+    transform var(--duracao) ease,
+    color var(--duracao) ease;
+}
+
+.header__painelLigacao:hover .header__painelRotulo::after,
+.header__painelLigacao:focus-visible .header__painelRotulo::after,
+.header__painelLigacao--activa .header__painelRotulo::after {
+  transform: scaleX(1);
+}
+
+.header__painelLigacao:hover .header__painelSeta {
+  color: var(--cor-destaque);
+  transform: translateX(6px);
+}
+
+.header__painelLigacao:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: -2px;
+}
+
+.header__painelLigacao--activa,
+.header__painelLigacao--activa .header__painelSeta,
+.header__painelLigacao--destaque .header__painelRotulo {
+  color: var(--cor-destaque);
+}
+
+.header__painelHoje {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: var(--espaco-6) var(--espaco-5) 0;
+  max-inline-size: 22rem;
+}
+
+.header__painelData {
+  color: var(--cor-texto);
+  font-size: var(--texto-pequeno);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.header__medidor {
+  display: block;
+  block-size: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--cor-borda);
+}
+
+.header__medidorPreenchimento {
+  display: block;
+  block-size: 100%;
+  background: var(--cor-destaque);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header__painel[data-aberto] .header__medidorPreenchimento {
+  transform: scaleX(var(--progresso, 0));
+  transition-delay: 600ms;
+}
+
+.header__painelDia {
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header__painelRodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-3);
+  margin-block-start: auto;
+  padding: var(--espaco-5);
+}
+
+.header__painelNota {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.8125rem;
+}
+
+.header__painelNota svg {
+  inline-size: 0.85rem;
+  block-size: 0.85rem;
+}
+
+.header__painelFechar {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 50%;
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
+  transition:
+    color var(--duracao) ease,
+    background-color var(--duracao) ease,
+    border-color var(--duracao) ease;
+}
+
+.header__painelFechar:hover {
+  border-color: var(--cor-texto-suave);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.header__painelFechar:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+@media (width < 64rem) {
+  .header__ilha {
+    grid-template-columns: 1fr auto;
+    gap: var(--espaco-2);
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__gatilho {
+    display: block;
+  }
+}
+
+@media (width >= 64rem) {
+  .header__painel {
+    display: none !important;
+  }
+}
+
+@media (width < 24rem) {
+  .header__marcaTexto {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header__painel,
+  .header__painelItem,
+  .header__medidorPreenchimento,
+  .header__lista::before {
+    transition: none !important;
+  }
+
+  .header__painel[data-aberto] .header__painelItem {
+    transition: none !important;
+  }
+}

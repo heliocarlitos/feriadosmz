@@ -1,0 +1,54 @@
+.botaotema {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 50%;
+  color: var(--cor-texto-suave);
+  transition:
+    color var(--duracao) ease,
+    background-color var(--duracao) ease,
+    transform var(--duracao) ease;
+}
+
+.botaotema:hover {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.botaotema:active {
+  transform: scale(0.9);
+}
+
+.botaotema:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.botaotema__icone {
+  grid-area: 1 / 1;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
+.botaotema__icone--lua {
+  display: none;
+}
+
+:root[data-tema="escuro"] .botaotema__icone--sol {
+  display: none;
+}
+
+:root[data-tema="escuro"] .botaotema__icone--lua {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) .botaotema__icone--sol {
+    display: none;
+  }
+
+  :root:not([data-tema="claro"]) .botaotema__icone--lua {
+    display: block;
+  }
+}

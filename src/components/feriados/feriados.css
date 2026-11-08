@@ -1,0 +1,129 @@
+.feriados {
+  padding-block: var(--espaco-8) var(--espaco-9);
+}
+
+.feriados__cabecalho {
+  display: grid;
+  gap: var(--espaco-3);
+  max-inline-size: 40rem;
+}
+
+.feriados__titulo {
+  font-size: var(--titulo-1);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.feriados__descricao {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-grande);
+}
+
+.feriados__abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin-block-start: var(--espaco-6);
+}
+
+.feriados__aba {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    border-color var(--duracao) ease,
+    background-color var(--duracao) ease,
+    color var(--duracao) ease;
+}
+
+.feriados__aba:hover {
+  border-color: var(--cor-texto-suave);
+  color: var(--cor-texto);
+}
+
+.feriados__aba--activa,
+.feriados__aba--activa:hover {
+  border-color: var(--cor-destaque);
+  background: color-mix(in oklch, var(--cor-destaque) 12%, transparent);
+  color: var(--cor-destaque);
+}
+
+.feriados__abaContagem {
+  font-family: var(--fonte-codigo);
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.feriados__destaque {
+  margin-block-start: var(--espaco-6);
+}
+
+.feriados__provincias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin-block-start: var(--espaco-7);
+}
+
+.feriados__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  color: var(--cor-texto-suave);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  transition:
+    border-color var(--duracao) ease,
+    color var(--duracao) ease;
+}
+
+.feriados__chip:hover {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+}
+
+.feriados__chipContagem {
+  font-family: var(--fonte-codigo);
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+.feriados__grupo {
+  margin-block-start: var(--espaco-7);
+}
+
+.feriados__grupoTitulo {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espaco-3);
+  padding-block-end: var(--espaco-3);
+  border-block-end: 1px solid var(--cor-borda);
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.feriados__grupoContagem {
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.feriados__grelha {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--espaco-5);
+  margin-block-start: var(--espaco-5);
+}

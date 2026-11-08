@@ -1,0 +1,16 @@
+@"
+node_modules/
+.next/
+out/
+dist/
+build/
+.env
+.env.local
+.env*.local
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+coverage/
+"@ | Out-File -Encoding utf8 .gitignore
