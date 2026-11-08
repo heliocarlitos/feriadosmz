@@ -1,0 +1,54 @@
+.provincia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--espaco-4);
+  align-content: start;
+  min-inline-size: 0;
+  min-block-size: 26rem;
+}
+
+.provincia select {
+  appearance: none;
+  padding-inline-end: 2.5rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='m4 6 4 4 4-4'/></svg>");
+  background-position: right 0.9rem center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.provincia__esqueleto {
+  block-size: 12rem;
+}
+
+.provincia .exemplos__linha {
+  animation: provincia-entrar 380ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.provincia li:nth-child(2) {
+  animation-delay: 40ms;
+}
+
+.provincia li:nth-child(3) {
+  animation-delay: 80ms;
+}
+
+.provincia li:nth-child(n + 4) {
+  animation-delay: 120ms;
+}
+
+@keyframes provincia-entrar {
+  from {
+    opacity: 0;
+    translate: -0.5rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .provincia .exemplos__linha {
+    animation: none;
+  }
+}
