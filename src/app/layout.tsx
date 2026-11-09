@@ -4,6 +4,7 @@ import Header from "@/components/ui/header/header"
 import BarraCarregamento from "@/components/ui/barracarregamento/barracarregamento"
 import { SCRIPT_TEMA } from "@/biblioteca/scriptTema"
 import "./globals.css"
+import Rodape from "@/components/ui/rodape/rodape"
 
 const fonteBase = Geist({ subsets: ["latin"], variable: "--fonte-base", display: "swap" })
 const fonteCodigo = Geist_Mono({ subsets: ["latin"], variable: "--fonte-codigo-base", display: "swap" })
@@ -29,6 +30,7 @@ export default function LayoutRaiz({ children }: { children: React.ReactNode }) 
         <BarraCarregamento />
         <Header />
         <main>{children}</main>
+        <Rodape />
       </body>
     </html>
   )
