@@ -12,13 +12,17 @@
     "dados:validar": "node src/dados/validar.mjs"
   },
   "dependencies": {
+    "mailchecker": "^6.0.21",
     "next": "^16.2.0",
+    "nodemailer": "^10.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-icons": "^5.7.0"
+    "react-icons": "^5.7.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "typescript": "^5.9.3"

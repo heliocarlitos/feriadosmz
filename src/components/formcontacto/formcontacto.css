@@ -1,0 +1,346 @@
+.formcontacto {
+  --cor-erro: light-dark(oklch(52% 0.19 25), oklch(74% 0.16 25));
+  --cor-sucesso: light-dark(oklch(48% 0.12 155), oklch(76% 0.14 155));
+
+  display: grid;
+  gap: var(--espaco-7) var(--espaco-8);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "formulario"
+    "painel";
+  padding-block: var(--espaco-8);
+}
+
+.formcontacto__intro { grid-area: intro; }
+.formcontacto__formulario { grid-area: formulario; min-inline-size: 0; }
+.formcontacto__painel { grid-area: painel; min-inline-size: 0; }
+
+@media (min-width: 62rem) {
+  .formcontacto {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      "intro formulario"
+      "painel formulario";
+    align-items: start;
+  }
+}
+
+/* ---------- Formulário ---------- */
+
+.formcontacto__form {
+  display: grid;
+  gap: var(--espaco-5);
+}
+
+.formcontacto__grupo {
+  display: grid;
+  gap: var(--espaco-5);
+}
+
+@media (min-width: 40rem) {
+  .formcontacto__grupo { grid-template-columns: 1fr 1fr; }
+}
+
+.formcontacto__campo {
+  display: grid;
+  gap: var(--espaco-2);
+  align-content: start;
+}
+
+.formcontacto__rotulo,
+.formcontacto__legenda {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.formcontacto__entrada {
+  inline-size: 100%;
+  padding: 0.75rem 0.875rem;
+  font: inherit;
+  color: var(--cor-texto);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: border-color var(--duracao), background-color var(--duracao);
+}
+
+.formcontacto__entrada::placeholder {
+  color: var(--cor-texto-suave);
+  opacity: 0.7;
+}
+
+.formcontacto__entrada:hover { border-color: var(--cor-texto-suave); }
+
+.formcontacto__entrada:focus-visible {
+  outline: 2px solid var(--cor-destaque-forte);
+  outline-offset: 2px;
+  border-color: var(--cor-destaque-forte);
+}
+
+.formcontacto__entrada[aria-invalid="true"] { border-color: var(--cor-erro); }
+
+.formcontacto__entrada--area {
+  resize: vertical;
+  min-block-size: 9rem;
+  field-sizing: content;
+  max-block-size: 24rem;
+  line-height: 1.55;
+}
+
+.formcontacto__erro {
+  color: var(--cor-erro);
+  font-size: 0.85rem;
+}
+
+.formcontacto__rodape-campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--espaco-3);
+}
+
+.formcontacto__contador {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  margin-inline-start: auto;
+  font-family: var(--fonte-codigo);
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+}
+
+.formcontacto__medidor {
+  appearance: none;
+  inline-size: 3.5rem;
+  block-size: 3px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--cor-borda);
+  overflow: hidden;
+}
+
+.formcontacto__medidor::-webkit-progress-bar { background: var(--cor-borda); }
+.formcontacto__medidor::-webkit-progress-value { background: var(--cor-destaque-forte); }
+.formcontacto__medidor::-moz-progress-bar { background: var(--cor-destaque-forte); }
+
+/* ---------- Motivos ---------- */
+
+.formcontacto__motivos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.formcontacto__legenda {
+  inline-size: 100%;
+  padding: 0;
+  margin-block-end: var(--espaco-1);
+}
+
+.formcontacto__motivo {
+  position: relative;
+  cursor: pointer;
+}
+
+.formcontacto__motivo-radio {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.formcontacto__motivo-texto {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  color: var(--cor-texto-suave);
+  transition: background-color var(--duracao), color var(--duracao), border-color var(--duracao);
+}
+
+.formcontacto__motivo:hover .formcontacto__motivo-texto { border-color: var(--cor-texto-suave); }
+
+.formcontacto__motivo:has(:checked) .formcontacto__motivo-texto {
+  background: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+  font-weight: 600;
+}
+
+.formcontacto__motivo:has(:focus-visible) .formcontacto__motivo-texto {
+  outline: 2px solid var(--cor-destaque-forte);
+  outline-offset: 2px;
+}
+
+/* ---------- Acções ---------- */
+
+.formcontacto__accoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-4);
+}
+
+.formcontacto__progresso {
+  display: flex;
+  gap: var(--espaco-1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.formcontacto__segmento {
+  inline-size: 1.75rem;
+  block-size: 4px;
+  border-radius: 2px;
+  background: var(--cor-borda);
+  transition: background-color var(--duracao);
+}
+
+.formcontacto__segmento[data-ok] { background: var(--cor-destaque-forte); }
+
+.formcontacto__enviar[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.formcontacto__aviso {
+  min-block-size: 1.4em;
+  font-size: 0.9rem;
+  color: var(--cor-erro);
+}
+
+/* ---------- Campo-armadilha ---------- */
+
+.formcontacto__armadilha {
+  position: absolute;
+  inset-inline-start: -10000px;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Sucesso ---------- */
+
+.formcontacto__sucesso {
+  display: grid;
+  gap: var(--espaco-4);
+  justify-items: start;
+  padding: var(--espaco-6);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+}
+
+.formcontacto__sucesso-titulo {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.formcontacto__sucesso-titulo:focus-visible {
+  outline: 2px solid var(--cor-destaque-forte);
+  outline-offset: 4px;
+}
+
+.formcontacto__sucesso-texto { color: var(--cor-texto-suave); overflow-wrap: anywhere; }
+
+/* ---------- Painel do pedido ---------- */
+
+.formcontacto__painel {
+  display: grid;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  font-family: var(--fonte-codigo);
+  font-size: 0.8rem;
+}
+
+.formcontacto__painel-titulo {
+  color: var(--cor-texto-suave);
+  margin: 0;
+}
+
+.formcontacto__verbo {
+  color: var(--cor-destaque-forte);
+  font-weight: 700;
+}
+
+.formcontacto__codigo {
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+.formcontacto__linha {
+  display: inline;
+  padding-inline: var(--espaco-1);
+  margin-inline: calc(var(--espaco-1) * -1);
+  border-radius: 3px;
+  transition: background-color var(--duracao);
+}
+
+.formcontacto__linha[data-activa] {
+  background: color-mix(in oklch, var(--cor-destaque) 22%, transparent);
+}
+
+.formcontacto__chave { color: var(--cor-texto-suave); }
+.formcontacto__valor { color: var(--cor-texto); }
+
+.formcontacto__resposta {
+  padding-block-start: var(--espaco-3);
+  border-block-start: 1px dashed var(--cor-borda);
+}
+
+.formcontacto__estado {
+  margin: 0 0 var(--espaco-1);
+  color: var(--cor-texto-suave);
+}
+
+.formcontacto__estado[data-sucesso] { color: var(--cor-sucesso); }
+
+/* Entrada suave ao carregar, desligada se o utilizador preferir menos movimento */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .formcontacto__painel {
+      animation: formcontacto-entrar linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes formcontacto-entrar {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .formcontacto * { transition: none !important; }
+}
+
+@media (forced-colors: active) {
+  .formcontacto__motivo:has(:checked) .formcontacto__motivo-texto {
+    outline: 2px solid Highlight;
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+  }
+  .formcontacto__segmento[data-ok] { background: Highlight; }
+  .formcontacto__linha[data-activa] { outline: 1px solid Highlight; }
+}
