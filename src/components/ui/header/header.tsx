@@ -16,7 +16,8 @@ const ROTAS = [
   { href: "/feriados/nacional", rotulo: "Nacional", titulo: "Feriado nacional", numero: "02" },
   { href: "/feriados/provincial", rotulo: "Provincial", titulo: "Feriado provincial", numero: "03" },
   { href: "/feriados/municipal", rotulo: "Municipal", titulo: "Feriado municipal", numero: "04" },
-  { href: "/doc", rotulo: "Documentação", titulo: "Documentação", numero: "05" }
+  { href: "/contacto", rotulo: "Contacto", titulo: "Contacto", numero: "05" },
+  { href: "/doc", rotulo: "Documentação", titulo: "Documentação", numero: "06" }
 ] as const
 
 type RotaHref = (typeof ROTAS)[number]["href"]
