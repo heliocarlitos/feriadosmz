@@ -92,14 +92,14 @@
   :root {
     color-scheme: light dark;
 
-    --cor-fundo: light-dark(oklch(99% 0.003 100), oklch(11% 0.008 165));
-    --cor-superficie: light-dark(oklch(96.5% 0.005 100), oklch(15% 0.01 165));
-    --cor-texto: light-dark(oklch(22% 0.01 170), oklch(95% 0.006 160));
-    --cor-texto-suave: light-dark(oklch(47% 0.012 170), oklch(72% 0.015 160));
-    --cor-borda: light-dark(oklch(89% 0.006 100), oklch(24% 0.014 165));
-    --cor-destaque: light-dark(oklch(45% 0.1 175), oklch(78% 0.15 155));
-    --cor-destaque-forte: light-dark(oklch(38% 0.09 175), oklch(84% 0.16 155));
-    --cor-sobre-destaque: light-dark(oklch(99% 0.003 100), oklch(13% 0.012 165));
+    --cor-fundo: light-dark(hsl(0 0% 97.6471%), hsl(0 0% 6.6667%));
+    --cor-superficie: light-dark(hsl(0 0% 98.8235%), hsl(0 0% 9.8039%));
+    --cor-texto: light-dark(hsl(0 0% 12.549%), hsl(0 0% 93.3333%));
+    --cor-texto-suave: light-dark(hsl(0 0% 39.2157%), hsl(0 0% 70.5882%));
+    --cor-borda: light-dark(hsl(0 0% 84.7059%), hsl(0 0% 28.2353%));
+    --cor-destaque: light-dark(hsl(16.6667 21.9512% 32.1569%), hsl(29.5082 100% 88.0392%));
+    --cor-destaque-forte: light-dark(hsl(16.5 24.3902% 32.1569%), hsl(30 100% 87.8431%));
+    --cor-sobre-destaque: light-dark(hsl(0 0% 100%), hsl(183.1579 54.2857% 6.8627%));
     --fonte-sistema: system-ui, -apple-system, "Segoe UI", sans-serif;
     --fonte-codigo: var(--fonte-codigo-base), ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
     --texto-pequeno: 0.875rem;
@@ -118,9 +118,18 @@
     --espaco-8: 4.5rem;
     --espaco-9: 6rem;
 
-    --raio: 0.375rem;
+    --raio: 0.35rem;
     --largura-contentor: 72rem;
     --duracao: 120ms;
+
+    --sombra-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --sombra-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --sombra-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --sombra: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --sombra-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --sombra-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --sombra-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --sombra-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   }
 
   :root[data-tema="claro"] {

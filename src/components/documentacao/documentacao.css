@@ -1,14 +1,14 @@
 .documentacao {
-  --realce-chave: light-dark(oklch(42% 0.11 175), oklch(80% 0.11 170));
-  --realce-texto: light-dark(oklch(46% 0.12 65), oklch(83% 0.1 85));
-  --realce-numero: light-dark(oklch(48% 0.15 30), oklch(78% 0.12 40));
-  --realce-palavra: light-dark(oklch(44% 0.13 255), oklch(79% 0.1 250));
-  --realce-funcao: light-dark(oklch(44% 0.12 215), oklch(80% 0.09 210));
-  --realce-variavel: light-dark(oklch(42% 0.12 15), oklch(80% 0.1 20));
-  --realce-opcao: light-dark(oklch(45% 0.1 300), oklch(80% 0.08 300));
+  --realce-chave: light-dark(hsl(0 0% 30%), hsl(0 0% 82%));
+  --realce-texto: light-dark(hsl(0 0% 28%), hsl(0 0% 80%));
+  --realce-numero: light-dark(hsl(0 0% 26%), hsl(0 0% 78%));
+  --realce-palavra: light-dark(hsl(0 0% 24%), hsl(0 0% 84%));
+  --realce-funcao: light-dark(hsl(0 0% 32%), hsl(0 0% 79%));
+  --realce-variavel: light-dark(hsl(0 0% 29%), hsl(0 0% 81%));
+  --realce-opcao: light-dark(hsl(0 0% 34%), hsl(0 0% 77%));
   --realce-pontuacao: var(--cor-texto-suave);
-  --codigo-fundo: light-dark(oklch(97.8% 0.004 100), oklch(14.5% 0.006 170));
-  --cor-erro: light-dark(oklch(50% 0.17 27), oklch(74% 0.14 27));
+  --codigo-fundo: light-dark(hsl(0 0% 96%), hsl(0 0% 5%));
+  --cor-erro: light-dark(hsl(0 70% 42%), hsl(0 65% 68%));
 
   padding-block-end: var(--espaco-9);
 }
@@ -522,7 +522,7 @@
 .documentacao__metodo {
   padding: 0.2rem 0.5rem;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-destaque) 14%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 14%, transparent);
   color: var(--cor-destaque);
   font-family: var(--fonte-codigo);
   font-size: 0.7rem;
@@ -649,7 +649,7 @@
 
 .bloco:hover,
 .bloco:focus-within {
-  border-color: color-mix(in oklch, var(--cor-destaque) 45%, var(--cor-borda));
+  border-color: color-mix(in srgb, var(--cor-destaque) 45%, var(--cor-borda));
 }
 
 .bloco__topo {

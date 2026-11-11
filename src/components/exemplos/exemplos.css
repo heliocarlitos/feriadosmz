@@ -1,16 +1,16 @@
 .exemplos {
   --tipo-nacional: var(--cor-destaque);
-  --tipo-provincial: light-dark(oklch(55% 0.15 330), oklch(77% 0.12 335));
-  --tipo-municipal: light-dark(oklch(58% 0.14 65), oklch(80% 0.14 80));
-  --tipo-religioso: light-dark(oklch(52% 0.13 255), oklch(76% 0.1 250));
-  --tipo-tolerancia_ponto: light-dark(oklch(50% 0.12 20), oklch(75% 0.11 25));
-  --tk-chave: light-dark(oklch(42% 0.11 175), oklch(80% 0.12 160));
-  --tk-texto: light-dark(oklch(46% 0.12 65), oklch(83% 0.1 85));
-  --tk-numero: light-dark(oklch(48% 0.15 30), oklch(78% 0.12 40));
-  --tk-palavra: light-dark(oklch(44% 0.13 255), oklch(79% 0.1 250));
-  --tk-funcao: light-dark(oklch(44% 0.12 215), oklch(80% 0.09 210));
-  --tk-variavel: light-dark(oklch(42% 0.12 15), oklch(80% 0.1 20));
-  --cor-erro: light-dark(oklch(50% 0.17 27), oklch(74% 0.14 27));
+  --tipo-provincial: light-dark(hsl(0 0% 42%), hsl(0 0% 74%));
+  --tipo-municipal: light-dark(hsl(0 0% 48%), hsl(0 0% 78%));
+  --tipo-religioso: light-dark(hsl(0 0% 36%), hsl(0 0% 80%));
+  --tipo-tolerancia_ponto: light-dark(hsl(0 0% 30%), hsl(0 0% 70%));
+  --tk-chave: light-dark(hsl(0 0% 30%), hsl(0 0% 82%));
+  --tk-texto: light-dark(hsl(0 0% 28%), hsl(0 0% 80%));
+  --tk-numero: light-dark(hsl(0 0% 26%), hsl(0 0% 78%));
+  --tk-palavra: light-dark(hsl(0 0% 24%), hsl(0 0% 84%));
+  --tk-funcao: light-dark(hsl(0 0% 32%), hsl(0 0% 79%));
+  --tk-variavel: light-dark(hsl(0 0% 29%), hsl(0 0% 81%));
+  --cor-erro: light-dark(hsl(0 70% 42%), hsl(0 65% 68%));
 
   position: relative;
   padding-block: var(--espaco-9);
@@ -62,7 +62,7 @@
 
 .exemplos__atalhos a:hover {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 10%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 10%, transparent);
   color: var(--cor-texto);
   translate: 0 -2px;
 }
@@ -101,7 +101,7 @@
 
 .exemplo:hover,
 .exemplo:focus-within {
-  border-color: color-mix(in oklch, var(--cor-destaque) 40%, var(--cor-borda));
+  border-color: color-mix(in srgb, var(--cor-destaque) 40%, var(--cor-borda));
 }
 
 .exemplo--larga {
@@ -166,7 +166,7 @@
 .exemplo__metodo {
   padding: 0.12rem 0.45rem;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-destaque) 14%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 14%, transparent);
   color: var(--cor-destaque);
   font-family: var(--fonte-codigo);
   font-size: 0.68rem;
@@ -402,14 +402,14 @@
 
 .exemplos__chip:hover {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 10%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 10%, transparent);
   color: var(--cor-texto);
   translate: 0 -2px;
 }
 
 .exemplos__chip[aria-pressed="true"] {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 14%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 14%, transparent);
   color: var(--cor-destaque-forte);
 }
 
@@ -498,7 +498,7 @@
 .exemplos__esqueleto {
   display: block;
   border-radius: 0.75rem;
-  background: linear-gradient(90deg, var(--cor-borda) 25%, color-mix(in oklch, var(--cor-borda) 40%, var(--cor-superficie)) 50%, var(--cor-borda) 75%);
+  background: linear-gradient(90deg, var(--cor-borda) 25%, color-mix(in srgb, var(--cor-borda) 40%, var(--cor-superficie)) 50%, var(--cor-borda) 75%);
   background-size: 200% 100%;
   animation: exemplos-brilho 1.4s linear infinite;
 }

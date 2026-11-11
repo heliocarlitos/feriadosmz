@@ -1,8 +1,8 @@
 .herohome {
-  --tk-chave: light-dark(oklch(42% 0.11 175), oklch(80% 0.12 160));
-  --tk-texto: light-dark(oklch(46% 0.12 65), oklch(83% 0.1 85));
-  --tk-bool: light-dark(oklch(44% 0.13 255), oklch(79% 0.1 250));
-  --herohome-linha: color-mix(in oklch, var(--cor-borda) 70%, transparent);
+  --tk-chave: light-dark(hsl(0 0% 30%), hsl(0 0% 82%));
+  --tk-texto: light-dark(hsl(0 0% 28%), hsl(0 0% 80%));
+  --tk-bool: light-dark(hsl(0 0% 24%), hsl(0 0% 84%));
+  --herohome-linha: color-mix(in srgb, var(--cor-borda) 70%, transparent);
 
   position: relative;
   isolation: isolate;
@@ -18,13 +18,6 @@
   z-index: -1;
   pointer-events: none;
 }
-
-/* .herohome__fundo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(40rem circle at var(--rato-x, 72%) var(--rato-y, 16%), color-mix(in oklch, var(--cor-destaque) 15%, transparent), transparent 70%);
-} */
 
 .herohome__fundo::after {
   content: "";
@@ -74,7 +67,7 @@
   padding: 0.4rem 0.85rem 0.4rem 0.7rem;
   border: 1px solid var(--cor-borda);
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-superficie) 80%, transparent);
+  background: color-mix(in srgb, var(--cor-superficie) 80%, transparent);
   color: var(--cor-texto-suave);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -210,14 +203,14 @@
   padding: 0.35rem 0.35rem 0.35rem 1rem;
   border: 1px solid var(--cor-borda);
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-superficie) 80%, transparent);
+  background: color-mix(in srgb, var(--cor-superficie) 80%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: border-color var(--duracao) ease;
 }
 
 .herohome__comando:hover {
-  border-color: color-mix(in oklch, var(--cor-destaque) 50%, var(--cor-borda));
+  border-color: color-mix(in srgb, var(--cor-destaque) 50%, var(--cor-borda));
 }
 
 .herohome__metodo {
@@ -284,7 +277,7 @@
 
 .herohome__tipos a:hover {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 10%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 10%, transparent);
   color: var(--cor-texto);
 }
 
@@ -300,7 +293,7 @@
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--cor-borda);
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-fundo) 88%, transparent);
+  background: color-mix(in srgb, var(--cor-fundo) 88%, transparent);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--cor-destaque);
@@ -331,10 +324,10 @@
   padding: var(--espaco-5);
   border: 1px solid var(--cor-borda);
   border-radius: 1.25rem;
-  background: color-mix(in oklch, var(--cor-superficie) 88%, transparent);
+  background: color-mix(in srgb, var(--cor-superficie) 88%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 36px 70px -36px color-mix(in oklch, var(--cor-texto) 40%, transparent);
+  box-shadow: 0 36px 70px -36px color-mix(in srgb, var(--cor-texto) 40%, transparent);
   transform: rotateX(var(--inclinar-x, 0deg)) rotateY(var(--inclinar-y, 0deg));
   transform-style: preserve-3d;
   transition:
@@ -344,19 +337,8 @@
   animation: herohome-cartao 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 700ms forwards;
 }
 
-/* .herohome__cartao::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(18rem circle at var(--brilho-x, 50%) var(--brilho-y, 0%), color-mix(in oklch, var(--cor-destaque) 14%, transparent), transparent 62%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 300ms ease;
-} */
-
 .herohome__cartao:hover {
-  border-color: color-mix(in oklch, var(--cor-destaque) 45%, var(--cor-borda));
+  border-color: color-mix(in srgb, var(--cor-destaque) 45%, var(--cor-borda));
 }
 
 .herohome__cartao:hover::after {
@@ -443,7 +425,7 @@
   margin-block-start: var(--espaco-1);
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-destaque) 14%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 14%, transparent);
   color: var(--cor-destaque-forte);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -452,7 +434,7 @@
 .herohome__esqueleto {
   display: block;
   border-radius: 0.75rem;
-  background: linear-gradient(90deg, var(--cor-borda) 25%, color-mix(in oklch, var(--cor-borda) 40%, var(--cor-superficie)) 50%, var(--cor-borda) 75%);
+  background: linear-gradient(90deg, var(--cor-borda) 25%, color-mix(in srgb, var(--cor-borda) 40%, var(--cor-superficie)) 50%, var(--cor-borda) 75%);
   background-size: 200% 100%;
   animation: herohome-brilho 1.4s linear infinite;
 }
@@ -536,7 +518,7 @@
   position: relative;
   overflow: hidden;
   border-block: 1px solid var(--cor-borda);
-  background: color-mix(in oklch, var(--cor-superficie) 70%, transparent);
+  background: color-mix(in srgb, var(--cor-superficie) 70%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }

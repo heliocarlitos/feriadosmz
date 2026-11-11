@@ -1,11 +1,11 @@
 .rodape {
-  --terminal-fundo: oklch(17% 0.012 170);
-  --terminal-texto: oklch(93% 0.006 100);
-  --terminal-suave: oklch(68% 0.014 170);
-  --terminal-destaque: oklch(80% 0.14 165);
-  --terminal-chave: oklch(80% 0.12 160);
-  --terminal-texto-cor: oklch(84% 0.1 85);
-  --terminal-bool: oklch(79% 0.1 250);
+  --terminal-fundo: hsl(0 0% 8%);
+  --terminal-texto: hsl(0 0% 92%);
+  --terminal-suave: hsl(0 0% 60%);
+  --terminal-destaque: hsl(0 0% 78%);
+  --terminal-chave: hsl(0 0% 82%);
+  --terminal-texto-cor: hsl(0 0% 80%);
+  --terminal-bool: hsl(0 0% 84%);
 
   position: relative;
   isolation: isolate;
@@ -40,14 +40,14 @@
   inset-block-start: -25%;
   inset-inline: -10%;
   block-size: 80%;
-  background: radial-gradient(40rem circle at 15% 0%, color-mix(in oklch, var(--cor-destaque) 16%, transparent), transparent 60%), radial-gradient(34rem circle at 85% 10%, color-mix(in oklch, var(--cor-destaque-forte) 12%, transparent), transparent 60%);
+  background: radial-gradient(40rem circle at 15% 0%, color-mix(in srgb, var(--cor-destaque) 16%, transparent), transparent 60%), radial-gradient(34rem circle at 85% 10%, color-mix(in srgb, var(--cor-destaque-forte) 12%, transparent), transparent 60%);
   animation: rodape-aurora 22s ease-in-out infinite alternate;
 }
 
 .rodape__pontos {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(color-mix(in oklch, var(--cor-destaque) 70%, transparent) 1px, transparent 1.5px);
+  background-image: radial-gradient(color-mix(in srgb, var(--cor-destaque) 70%, transparent) 1px, transparent 1.5px);
   background-size: 28px 28px;
   mask-image: radial-gradient(20rem circle at var(--rato-x, 50%) var(--rato-y, -30%), #000, transparent 70%);
   -webkit-mask-image: radial-gradient(20rem circle at var(--rato-x, 50%) var(--rato-y, -30%), #000, transparent 70%);
@@ -57,7 +57,7 @@
 .rodape__luz {
   position: absolute;
   inset: 0;
-  background: radial-gradient(26rem circle at var(--rato-x, 50%) var(--rato-y, -30%), color-mix(in oklch, var(--cor-destaque) 13%, transparent), transparent 65%);
+  background: radial-gradient(26rem circle at var(--rato-x, 50%) var(--rato-y, -30%), color-mix(in srgb, var(--cor-destaque) 13%, transparent), transparent 65%);
 }
 
 @keyframes rodape-aurora {
@@ -94,13 +94,13 @@
   padding: var(--espaco-6);
   border: 1px solid var(--cor-borda);
   border-radius: 1.75rem;
-  background: linear-gradient(145deg, color-mix(in oklch, var(--cor-fundo) 92%, transparent), color-mix(in oklch, var(--cor-destaque) 7%, var(--cor-fundo)));
-  box-shadow: 0 30px 60px -40px color-mix(in oklch, var(--cor-texto) 50%, transparent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--cor-fundo) 92%, transparent), color-mix(in srgb, var(--cor-destaque) 7%, var(--cor-fundo)));
+  box-shadow: 0 30px 60px -40px color-mix(in srgb, var(--cor-texto) 50%, transparent);
   transition: border-color 300ms ease;
 }
 
 .rodape__destaque:hover {
-  border-color: color-mix(in oklch, var(--cor-destaque) 40%, var(--cor-borda));
+  border-color: color-mix(in srgb, var(--cor-destaque) 40%, var(--cor-borda));
 }
 
 .rodape__destaqueTexto {
@@ -232,11 +232,11 @@
 .rodape__terminal {
   min-inline-size: 0;
   overflow: hidden;
-  border: 1px solid color-mix(in oklch, var(--cor-borda) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cor-borda) 80%, transparent);
   border-radius: 1rem;
   background: var(--terminal-fundo);
   color: var(--terminal-texto);
-  box-shadow: 0 24px 48px -28px oklch(10% 0.01 170 / 0.7);
+  box-shadow: 0 24px 48px -28px hsl(0 0% 5% / 0.7);
   transition:
     transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1),
     border-color 240ms ease;
@@ -249,7 +249,7 @@
 }
 
 .rodape__terminal:hover {
-  border-color: color-mix(in oklch, var(--terminal-destaque) 50%, transparent);
+  border-color: color-mix(in srgb, var(--terminal-destaque) 50%, transparent);
 }
 
 .rodape__terminalTopo {
@@ -258,7 +258,7 @@
   justify-content: space-between;
   gap: var(--espaco-3);
   padding: 0.4rem 0.6rem 0.4rem 1rem;
-  border-block-end: 1px solid oklch(100% 0 0 / 0.08);
+  border-block-end: 1px solid hsl(0 0% 100% / 0.08);
 }
 
 .rodape__semaforo {
@@ -278,17 +278,17 @@
 }
 
 .rodape__terminal:hover .rodape__semaforo span:nth-child(1) {
-  background: oklch(70% 0.17 25);
+  background: hsl(0 0% 62%);
   opacity: 1;
 }
 
 .rodape__terminal:hover .rodape__semaforo span:nth-child(2) {
-  background: oklch(82% 0.15 85);
+  background: hsl(0 0% 70%);
   opacity: 1;
 }
 
 .rodape__terminal:hover .rodape__semaforo span:nth-child(3) {
-  background: oklch(78% 0.16 150);
+  background: hsl(0 0% 55%);
   opacity: 1;
 }
 
@@ -317,8 +317,8 @@
 }
 
 .rodape__copiar:hover {
-  border-color: oklch(100% 0 0 / 0.15);
-  background: oklch(100% 0 0 / 0.06);
+  border-color: hsl(0 0% 100% / 0.15);
+  background: hsl(0 0% 100% / 0.06);
   color: var(--terminal-texto);
 }
 
@@ -327,7 +327,7 @@
 }
 
 .rodape__copiar[data-estado="erro"] {
-  color: oklch(74% 0.15 27);
+  color: hsl(0 70% 62%);
 }
 
 .rodape__copiar:focus-visible,
@@ -456,7 +456,7 @@
 
 .rodape__pausa:hover {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 10%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 10%, transparent);
   color: var(--cor-destaque);
 }
 
@@ -758,7 +758,7 @@ a.rodape__faixaLigacao:focus-visible .rodape__faixaNome {
   padding: 0.35rem 0.8rem;
   border: 1px solid var(--cor-borda);
   border-radius: 999px;
-  background: color-mix(in oklch, var(--cor-fundo) 70%, transparent);
+  background: color-mix(in srgb, var(--cor-fundo) 70%, transparent);
 }
 
 .rodape__relogioPonto {
@@ -814,7 +814,7 @@ a.rodape__faixaLigacao:focus-visible .rodape__faixaNome {
 
 .rodape__topo:hover {
   border-color: var(--cor-destaque);
-  background: color-mix(in oklch, var(--cor-destaque) 10%, transparent);
+  background: color-mix(in srgb, var(--cor-destaque) 10%, transparent);
   color: var(--cor-destaque);
 }
 
@@ -854,10 +854,10 @@ a.rodape__faixaLigacao:focus-visible .rodape__faixaNome {
 .rodape__letra {
   display: inline-block;
   color: transparent;
-  background-image: linear-gradient(180deg, color-mix(in oklch, var(--cor-destaque) 55%, transparent) 0%, color-mix(in oklch, var(--cor-destaque) 8%, transparent) 70%, transparent 100%);
+  background-image: linear-gradient(180deg, color-mix(in srgb, var(--cor-destaque) 55%, transparent) 0%, color-mix(in srgb, var(--cor-destaque) 8%, transparent) 70%, transparent 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-stroke: 1px color-mix(in oklch, var(--cor-destaque) 35%, transparent);
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--cor-destaque) 35%, transparent);
   pointer-events: auto;
   transition:
     translate 1000ms cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i, 0) * 60ms + 200ms),
@@ -867,7 +867,7 @@ a.rodape__faixaLigacao:focus-visible .rodape__faixaNome {
 }
 
 .rodape__letra--destaque {
-  -webkit-text-stroke-color: color-mix(in oklch, var(--cor-destaque) 70%, transparent);
+  -webkit-text-stroke-color: color-mix(in srgb, var(--cor-destaque) 70%, transparent);
 }
 
 .rodape[data-animar]:not([data-visivel]) .rodape__letra {
